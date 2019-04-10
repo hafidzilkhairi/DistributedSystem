@@ -26,7 +26,7 @@ def on_subscribe(client, userdata, mid, gqos):
 ##########################################
 
 # definisikan broker yang akan digunakan
-broker="localhost"
+broker="192.168.100.5"
 SUBTOPIC="photo"
 # buat client P2 
 print("creating new instance")
@@ -34,7 +34,7 @@ client= paho.Client("P2")
 
 # koneksi P2 ke broker
 print("connecting to broker")
-client.connect(broker,12345,61)
+client.connect(broker,12345,60)
 
 # P2 subcribe ke topik "photo"
 print("Subscribing to topic","photo")

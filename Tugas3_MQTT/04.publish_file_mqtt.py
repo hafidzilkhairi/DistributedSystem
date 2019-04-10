@@ -4,7 +4,7 @@
 import paho.mqtt.client as paho
 
 # definsi broker yang digunakan
-broker="localhost"
+broker="192.168.100.5"
 filename="surf.jpg"
 
 def on_publish(mosq, obj, mid):
