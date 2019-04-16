@@ -10,7 +10,7 @@ start = time.time()
 
 # gunakan regex filter t"Received = (\d)
 # regex ini digunakan untuk mencari kata "Received = x" x adalah angka (\d)
-received_packages = re.compile(r"Received = (\d)")
+received_packages = re.compile(r"(\d) received")
 
 """
 windows:
@@ -42,7 +42,7 @@ for suffix in range(1,20):
     ip = "10.30.32."+str(suffix)
     
     # lakukan ping -n 2
-    ping_out = os.popen("ping -n 2 "+ip,"r")
+    ping_out = os.popen("ping -c 1 "+ip,"r")
     print(("... pinging ",ip))
 
     # loop forever
