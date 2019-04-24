@@ -9,12 +9,15 @@ password = ''
 berhasil = ''
 
 def create_threads(passwords):
+    #bagi password dataset ke 4 thread
     password_list_split_points = [
+        #biar integer
         (0, len(passwords) // 4),
         (len(passwords) // 4 + 1, len(passwords) // 2),
         (len(passwords) // 2 + 1, 3 * (len(passwords) // 4)),
         (3 * (len(passwords) // 4) + 1, len(passwords) - 1),
     ]
+    #ngisi password ke thread
     thread_list = [threading.Thread(
         target=run_cracker,
         args=(
